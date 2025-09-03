@@ -28,5 +28,17 @@ router.get("/:id", async (req, res) => {
     res.status(500).json({ message: "Error en el servidor", error: err });
   }
 });
+// POST un nuevo contacto
+router.post("/", async (req, res) => {
+  try {
+    const db = getDb();
+    const result = await db.collection("contacts").insertOne(req.body);
+    res.status(201).json(result);
+  } catch (err) {
+    res.status(500).json({ message: "Error en el servidor", error: err });
+  }
+});
+
+
 
 module.exports = router;
