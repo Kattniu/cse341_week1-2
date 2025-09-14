@@ -1,24 +1,29 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const { initDb } = require("./db/connect");
 
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.use(express.json());
+app
+  .use(cors())
+  .use(express.json())
+  .use(express.urlencoded({ extended: true }))
+  .use('/', require('./routes')); // ya monta swagger y contacts
+
+app.get('/', (req, res) => {
+  res.send('API funcionando correctamente');
+});
 
 initDb((err) => {
   if (err) {
-    console.error("Error conectando a MongoDB:", err);
+    console.error("❌ Error conectando a MongoDB:", err);
   } else {
     console.log("✅ Conectado a MongoDB");
-
-    // Mover rutas aquí, después de conectar
-    app.use("/contacts", require("./routes/contacts"));
-
     app.listen(port, () => {
-      console.log(`Servidor corriendo en http://localhost:${port}`);
+      console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
     });
   }
 });
