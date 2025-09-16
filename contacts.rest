@@ -1,41 +1,43 @@
-### Get all contacts
-###.REST: Es un archivo de texto que contiene todas tus requests escritas en formato REST
-###.REST: It is a text file that contains all your requests written in REST format.
+### Obtener todos los contactos
 GET http://localhost:8080/contacts
 Content-Type: application/json
 
 ###
 
-### Get a contact by ID (replace the id later)
-GET http://localhost:8080/contacts/68b82e66df7238f6c9ebc99c
+### Obtener un contacto por ID
+GET http://localhost:8080/contacts/68b895a2df7238f6c9ebc99d
 Content-Type: application/json
 
 ###
 
-### Create a new contact
+### Crear un nuevo contacto
 POST http://localhost:8080/contacts
 Content-Type: application/json
 
 {
-  "name": "Jung Hoseok",
+  "firstName": "Jung",
+  "lastName": "Hoseok",
   "email": "jung.hoseok@example.com",
-  "phone": "1274359383"
+  "favoriteColor": "Green",
+  "birthday": "1994-10-10"
 }
 
 ###
 
-### Update a contact by ID
-PUT  http://localhost:8080/contacts/68b82e66df7238f6c9ebc99c
+### Actualizar un contacto por ID
+PUT http://localhost:8080/contacts/68b895a2df7238f6c9ebc99d
 Content-Type: application/json
 
 {
-  "name": "Katherine Gonzales",
+  "firstName": "Katherine",
+  "lastName": "Gonzales",
   "email": "katherine.g@example.com",
-  "phone": "987654321"
+  "favoriteColor": "Blue",
+  "birthday": "1990-05-15"
 }
 
 ###
 
-### Delete a contact by ID
-DELETE  http://localhost:8080/contacts/68b82e66df7238f6c9ebc99c
+### Eliminar un contacto por ID
+DELETE http://localhost:8080/contacts/68b895a2df7238f6c9ebc99d
 Content-Type: application/json

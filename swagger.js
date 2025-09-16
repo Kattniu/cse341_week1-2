@@ -1,6 +1,6 @@
 const swaggerAutogen = require('swagger-autogen')();
 
-// 👇 Esta línea define si estás en producción
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 const doc = {

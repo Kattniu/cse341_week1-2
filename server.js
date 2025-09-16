@@ -17,11 +17,20 @@ app.get('/', (req, res) => {
   res.send('API funcionando correctamente');
 });
 
-initDb((err) => {
+initDb((err, db) => {
   if (err) {
     console.error("❌ Error conectando a MongoDB:", err);
   } else {
     console.log("✅ Conectado a MongoDB");
+    db.collection('contacts').findOne({}, (err, result) => {
+      if (err) {
+        console.error("❌ Error al realizar consulta:", err);
+      } else if (result) {
+        console.log("✅ Conexión y consulta exitosas");
+      } else {
+        console.log("ℹ️ No se encontraron contactos en la base de datos");
+      }
+    });
     app.listen(port, () => {
       console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
     });
