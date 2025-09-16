@@ -16,3 +16,4 @@ const outputFile = './swagger.json';
 const endpointsFiles = ['./routes/index.js']; // Tus rutas
 
 swaggerAutogen(outputFile, endpointsFiles, doc);
+
