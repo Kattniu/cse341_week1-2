@@ -15,11 +15,11 @@ POST http://localhost:8080/contacts
 Content-Type: application/json
 
 {
-  "firstName": "Jung",
-  "lastName": "Hoseok",
-  "email": "jung.hoseok@example.com",
-  "favoriteColor": "Green",
-  "birthday": "1994-10-10"
+  "firstName": "Orejrreff",
+  "lastName": "Gonzadffsdles ",
+  "email": "orejas@example.com",
+  "favoriteColor": "browdddn ",
+  "birthday": "2022-03-12"
 }
 
 ###
@@ -39,5 +39,6 @@ Content-Type: application/json
 ###
 
 ### Eliminar un contacto por ID
-DELETE http://localhost:8080/contacts/68b895a2df7238f6c9ebc99d
+DELETE http://localhost:8080/contacts/68cb195cc634091dcb6b3706
+
 Content-Type: application/json
